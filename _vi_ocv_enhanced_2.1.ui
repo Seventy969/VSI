@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1198</width>
+    <height>875</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VSI — Visual Interface - Intelligence System</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>720</width>
+      <height>520</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="my_terminal">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>540</y>
+      <width>720</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="placeholderText">
+     <string>System log will appear here...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_panel_title">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>10</y>
+      <width>440</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Detection Results</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="grp_face">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>44</y>
+      <width>440</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Face Recognition</string>
+    </property>
+    <widget class="QLabel" name="lbl_face_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>28</y>
+       <width>90</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Identity:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_face_name">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>28</y>
+       <width>310</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_conf_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>56</y>
+       <width>90</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Confidence:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_conf_val">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>56</y>
+       <width>200</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_model_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>84</y>
+       <width>90</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Model:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_model_status">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>84</y>
+       <width>310</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Not loaded — use Load SVM</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grp_emotion">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>160</y>
+      <width>440</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Emotion Detection</string>
+    </property>
+    <widget class="QLabel" name="lbl_emotion_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>28</y>
+       <width>90</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Emotion:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_emotion">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>28</y>
+       <width>310</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grp_gesture">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>232</y>
+      <width>440</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Gesture Analysis</string>
+    </property>
+    <widget class="QLabel" name="lbl_gesture_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>26</y>
+       <width>90</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Gesture:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_gesture">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>26</y>
+       <width>310</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_fingers_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>54</y>
+       <width>90</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fingers:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_fingers">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>54</y>
+       <width>100</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_rps_cat_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>82</y>
+       <width>90</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>RPS Hand:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_rps_cat">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>82</y>
+       <width>310</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grp_rps">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>349</y>
+      <width>440</width>
+      <height>185</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Paper Scissors Stone Game</string>
+    </property>
+    <widget class="QPushButton" name="btn_rps_play">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>24</y>
+       <width>135</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>▶  Play  (P key)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_rps_reset">
+     <property name="geometry">
+      <rect>
+       <x>155</x>
+       <y>24</y>
+       <width>110</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Reset Score</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_rps_status">
+     <property name="geometry">
+      <rect>
+       <x>275</x>
+       <y>28</y>
+       <width>155</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Ready</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_you_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>55</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>You:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_player_choice">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>70</y>
+       <width>120</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_cpu_hdr">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>70</y>
+       <width>55</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CPU:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_computer_choice">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>70</y>
+       <width>150</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_result_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>55</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Result:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_rps_result">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>98</y>
+       <width>360</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_score_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>132</y>
+       <width>55</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Score:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_rps_score">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>132</y>
+       <width>360</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>W: 0   L: 0   D: 0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_rps_hint">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>158</y>
+       <width>420</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fist = Stone  |  Open Hand = Paper  |  Peace V = Scissors</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grp_pose_cls">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>541</y>
+      <width>440</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Pose Classification</string>
+    </property>
+    <widget class="QLabel" name="lbl_pose_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>26</y>
+       <width>90</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pose:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_pose_name">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>26</y>
+       <width>310</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—  (enable Pose Skeleton)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_knee_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>55</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Knee angle:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_knee_angle">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>55</y>
+       <width>90</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_elbow_hdr">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>55</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Elbow:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_elbow_angle">
+     <property name="geometry">
+      <rect>
+       <x>305</x>
+       <y>55</y>
+       <width>90</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_hip_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>82</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Hip angle:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_hip_angle">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>82</y>
+       <width>90</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>—</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grp_exercise">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>658</y>
+      <width>440</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Exercise Rep Counter</string>
+    </property>
+    <widget class="QLabel" name="lbl_reps_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>26</y>
+       <width>55</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Reps:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_rep_count">
+     <property name="geometry">
+      <rect>
+       <x>68</x>
+       <y>22</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_exercise_name">
+     <property name="geometry">
+      <rect>
+       <x>148</x>
+       <y>26</y>
+       <width>190</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_reset_reps">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>22</y>
+       <width>82</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Reset</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk_count_reps">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>54</y>
+       <width>200</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enable Rep Counting</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grp_perf">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>745</y>
+      <width>440</width>
+      <height>55</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Performance</string>
+    </property>
+    <widget class="QLabel" name="lbl_fps_hdr">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>24</y>
+       <width>45</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>FPS:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_fps">
+     <property name="geometry">
+      <rect>
+       <x>58</x>
+       <y>24</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0.0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_face_count_hdr">
+     <property name="geometry">
+      <rect>
+       <x>175</x>
+       <y>24</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Faces:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_face_count">
+     <property name="geometry">
+      <rect>
+       <x>238</x>
+       <y>24</y>
+       <width>50</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_device_hdr">
+     <property name="geometry">
+      <rect>
+       <x>308</x>
+       <y>24</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Device:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_device">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>24</y>
+       <width>62</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CPU</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grp_threshold">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>710</y>
+      <width>301</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Recognition Confidence Threshold</string>
+    </property>
+    <widget class="QSlider" name="slider_conf">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>221</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>10</number>
+     </property>
+     <property name="maximum">
+      <number>99</number>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_threshold_val">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>30</y>
+       <width>51</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>50%</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QCheckBox" name="chk_emotion">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>784</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Emotion Detection</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_pose">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>784</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pose Skeleton Overlay</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_camera_on">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>750</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>▶  Camera ON</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_camera_off">
+    <property name="geometry">
+     <rect>
+      <x>531</x>
+      <y>750</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>■  Camera OFF</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_load_svm">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>787</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load SVM Model</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_snapshot">
+    <property name="geometry">
+     <rect>
+      <x>531</x>
+      <y>787</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save Snapshot</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_clear_log">
+    <property name="geometry">
+     <rect>
+      <x>319</x>
+      <y>700</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear Log</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1198</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuActions">
+    <property name="title">
+     <string>Actions</string>
+    </property>
+    <addaction name="actionCamera_SVM"/>
+    <addaction name="actionCamera_SVM_off"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_SVM"/>
+    <addaction name="actionTrain_SVM"/>
+    <addaction name="separator"/>
+    <addaction name="actionSnapshot"/>
+    <addaction name="actionRPS_Play"/>
+    <addaction name="actionReset_Reps"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionToggleEmotion"/>
+    <addaction name="actionTogglePose"/>
+    <addaction name="actionToggleAngles"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuActions"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCamera_SVM">
+   <property name="text">
+    <string>Camera ON (SVM)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionCamera_SVM_off">
+   <property name="text">
+    <string>Camera OFF</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionLoad_SVM">
+   <property name="text">
+    <string>Load SVM Model...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionTrain_SVM">
+   <property name="text">
+    <string>Train SVM (run script)</string>
+   </property>
+  </action>
+  <action name="actionSnapshot">
+   <property name="text">
+    <string>Save Snapshot</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionRPS_Play">
+   <property name="text">
+    <string>Play Paper Scissors Stone</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
+  </action>
+  <action name="actionReset_Reps">
+   <property name="text">
+    <string>Reset Rep Counter</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionToggleEmotion">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Toggle Emotion Detection</string>
+   </property>
+  </action>
+  <action name="actionTogglePose">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Toggle Pose Skeleton</string>
+   </property>
+  </action>
+  <action name="actionToggleAngles">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Show Angle Overlays on Frame</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About VSI</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
