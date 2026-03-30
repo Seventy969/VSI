@@ -65,7 +65,7 @@ except ImportError:
     print("pip install onnxruntime requests  →  for emotion detection")
 
 # ─────────────────────────────────────────────────────────────────────────────
-UI_FILE          = "_vi_ocv_enhanced_2.1.ui"
+UI_FILE          = "vi_ocv.ui"
 COSINE_THRESHOLD = 0.65   # lower = more permissive face matching
 EMOTION_INTERVAL = 10     # run emotion every N frames
 
@@ -618,7 +618,7 @@ class FaceTrainerApp(QMainWindow):
     def _train_info(self):
         QMessageBox.information(self, "Train SVM",
             "Run in your terminal (venv active):\n\n"
-            "    python _vi_svm_train_enhanced.py\n\n"
+            "       python Train.py\n\n" # Edit here to run your Train.py
             "Edit TRAIN_DIR and PEOPLE inside that script, then\n"
             "load the [ .pkl ] via Button [Load SVM Model].")
 
